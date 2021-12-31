@@ -124,9 +124,7 @@ const TransFormArray = (arr) => {
         let findRandomMonth = (curr_month) => {
             let ran_month = parseInt(Math.random() * (12 - 1) + 1);
             if (ran_month > curr_month) {
-                findRandomMonth(curr_month)
-            } else {
-                return ran_month;
+                ran_month = Math.abs(curr_month - ran_month)
             }
         }
         let random_month = findRandomMonth(date.getMonth());
